@@ -1,0 +1,33 @@
+{
+  "name": "bidharabackend",
+  "version": "1.0.0",
+  "description": "Bidhara API to manage stock, resources and data",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrancoMeneses/bidharabackend.git"
+  },
+  "author": "Franco Meneses",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrancoMeneses/bidharabackend/issues"
+  },
+  "homepage": "https://github.com/FrancoMeneses/bidharabackend#readme",
+  "dependencies": {
+    "express": "4.18.2",
+    "mysql2": "^3.9.2",
+    "qrcode": "1.5.3",
+    "zod": "3.22.4"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "standard": "^17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
