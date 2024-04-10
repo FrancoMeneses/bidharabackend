@@ -2,9 +2,10 @@
 
 GET http://localhost:1222/trays
 
+
 ### GET One tray
 
-GET http://localhost:1222/trays/2e984eac-dd9d-11ee-a1f9-79564454d83d
+GET http://localhost:1222/trays/f63c2901-87cb-4faf-abf2-1fd519a8acbd
 
 ### POST new tray
 POST http://localhost:1222/trays/
@@ -14,14 +15,14 @@ Content-Type: application/json
   "productId": 15,
   "trayComment": "Esta es otra prueba",
   "categoryId": 1,
-  "trayStatus": 1,
+  "trayStatus": true,
   "trayQuality": "Excelente",
   "trayPercentage": 100,
-  "createdBy": "97b04b62-dd9b-11ee-a1f9-79564454d83d"
+  "createdBy": "4ee96546-1a65-410d-adf5-eb1ad7b4c07c"
 }
 
 ### PATCH
-PATCH http://localhost:1222/trays/2e984eac-dd9d-11ee-a1f9-79564454d83d
+PATCH http://localhost:1222/trays/65de370b-1e88-4c0c-9dc1-d9cf3f3009cf
 Content-Type:  application/json
 
 {
@@ -45,6 +46,4 @@ Content-Type:  application/json
 
 ### DELETE
 
-DELETE http://localhost:1222/trays/2e984eac-dd9d-11ee-a1f9-79564454d83d
-
-
+DELETE http://localhost:1222/trays/f63c2901-87cb-4faf-abf2-1fd519a8acbd
