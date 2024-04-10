@@ -1,4 +1,4 @@
-import * as trayModel from '../models/MySQL/trayModel.js'
+import * as trayModel from '../models/postgres/trayModel.js'
 import { validatePartialTray, validateTray } from '../schemas/tray.js'
 
 export async function getAll (req, res) {
