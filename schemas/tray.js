@@ -12,8 +12,8 @@ const traySchema = z.object({
     invalid_type_error: 'category_id must be a number',
     required_error: 'category_id is required'
   }),
-  trayStatus: z.number().min(0).max(1, {
-    invalid_type_error: 'Percentage must be a number'
+  trayStatus: z.boolean({
+    invalid_type_error: 'Status must be a boolean'
   }),
   trayQuality: z.string({
     invalid_type_error: 'tray_quality must be a string'
