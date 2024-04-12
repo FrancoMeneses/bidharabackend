@@ -47,3 +47,13 @@ Content-Type:  application/json
 ### DELETE
 
 DELETE http://localhost:1222/trays/f63c2901-87cb-4faf-abf2-1fd519a8acbd
+
+### GET USER
+
+POST http://localhost:1222/users/validate
+Content-Type: application/json
+
+{
+  "name": "Franco",
+  "password": "pozolomio"
+}
