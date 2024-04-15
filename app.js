@@ -8,8 +8,26 @@ const app = express()
 
 const PORT = process.env.PORT ?? 1222
 
-app.use(cors())
+app.use(cors({
+  origin: (origin, callback) => {
+    const ACCEPETED_ORIGINS = [
+      'http://localhost:5173'
+    ]
+
+    if (ACCEPETED_ORIGINS.includes(origin)) {
+      return callback(null, true)
+    }
+
+    if (!origin) {
+      return callback(null, true)
+    }
+
+    return callback(new Error('Not allowed by CORS'))
+  },
+  credentials: true
+}))
 app.use(json())
+app.disable('x-powered-by')
 
 app.use('/products', productRouter)
 app.use('/trays', trayRouter)

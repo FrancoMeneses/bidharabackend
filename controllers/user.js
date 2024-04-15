@@ -27,11 +27,31 @@ export async function getOneByName (req, res) {
   })
 
   res.setHeader('Set-Cookie', serialized)
-  res.setHeader('Access-Control-Allow-Origin', 'http://192.168.0.139:5173')
-  res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept'
-  )
 
   return res.status(200).json(response)
+}
+
+export async function logout (req, res) {
+  try {
+    console.log(req.cookies)
+    const { userToken } = req.cookies
+
+    if (!userToken) {
+      return res.status(401).json({ error: 'There is not token' })
+    }
+    jwt.verify(userToken, 'secret')
+
+    const serialized = serialize('userToken', null, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'None',
+      maxAge: 0,
+      path: '/'
+    })
+    res.setHeader('Set-Cookie', serialized)
+    res.status(200).json('Login succesfully')
+  } catch (error) {
+    console.log(error)
+    return res.status(401).json({ error: 'Invalid token' })
+  }
 }

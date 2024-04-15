@@ -4,3 +4,4 @@ import * as userController from '../controllers/user.js'
 export const userRouter = Router()
 
 userRouter.post('/validate', userController.getOneByName)
+userRouter.post('/logout', userController.logout)
